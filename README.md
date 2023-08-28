@@ -1,6 +1,8 @@
 # phaser-client [![CI](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yml/badge.svg)](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yml)
 A graphical user interface client for operators to interact with the RF Phaser server at JLab.
 
+![Screenshot](https://raw.githubusercontent.com/JeffersonLab/phaser-client/main/Screenshot.png)
+
 ---
 - [Overview](https://github.com/JeffersonLab/phaser-client#overview)
 - [Install](https://github.com/JeffersonLab/phaser-client#install)
