@@ -7,10 +7,7 @@ A graphical user interface client for operators to interact with the RF Phaser s
 - [Configure](https://github.com/JeffersonLab/phaser-client#configure)
 - [Build](https://github.com/JeffersonLab/phaser-client#build)
 - [Develop](https://github.com/JeffersonLab/phaser-client#develop)
-- [Test](https://github.com/JeffersonLab/phaser-client#test)
 - [Release](https://github.com/JeffersonLab/phaser-client#release)
-- [Deploy](https://github.com/JeffersonLab/phaser-client#deploy)
-- [See Also](https://github.com/JeffersonLab/phaser-client#see-also)
 ---
 
 ## Overview
@@ -45,7 +42,7 @@ The app expects two configuration files:
 | client.properties   | client configuration  | [client.properties](https://github.com/JeffersonLab/phaser-client/blob/main/config/client.properties)      |
 | logging.properties  | logging configuration | [logging.properties](https://github.com/JeffersonLab/phaser-client/blob/main/config/logging.properties)    | 
 
-The client.properties must be in the classpath and the logging.properties must be referenced via Java System Property `java.util.logging.config.file`
+The client.properties must be in the classpath and the logging.properties must be referenced via Java System Property `java.util.logging.config.file`.  The scripts generated in the install step handle both the classpath and system property and assume the config files are in a directory named `config` at the root of the project.
 
 ## Build
 This project is built with [Java 17](https://adoptium.net/) (compiled to Java 8 bytecode), and uses the [Gradle 7](https://gradle.org/) build tool to automatically download dependencies and build the project from source:
@@ -83,3 +80,7 @@ db.url=jdbc:oracle:thin:@//localhost:1521/xepdb1
 db.user=phaser_reader
 db.password=password
 ```
+
+## Release
+1. Bump the version number in build.gradle and commit and push to GitHub (using [Semantic Versioning](https://semver.org/)).   
+1. Create a new release on the GitHub [Releases](https://github.com/JeffersonLab/phaser-client/releases) page corresponding to same version in build.gradle (Enumerate changes and link issues).   Run the `assembleDist` Gradle build target and attach the generated zip to the release.
