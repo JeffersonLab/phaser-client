@@ -3,10 +3,10 @@ package org.jlab.phaser.network;
 import org.jlab.phaser.model.JobSpecification;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.LinkedHashSet;
-import java.util.List;
+
+import java.time.Instant;
+import java.time.ZoneId;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.json.JsonArray;
@@ -14,7 +14,6 @@ import javax.json.JsonNumber;
 import javax.json.JsonObject;
 import javax.json.JsonString;
 import javax.json.JsonValue;
-import javax.xml.bind.DatatypeConverter;
 import org.jlab.phaser.NotificationListener;
 
 /**
@@ -218,7 +217,7 @@ public class PhaserClientMessageDecoder extends ChannelInboundHandlerAdapter {
 
                         if (json.containsKey("start") && !json.isNull("start")) {
                             String startStr = json.getString("start");
-                            jobStart = DatatypeConverter.parseDateTime(startStr);
+                            jobStart = GregorianCalendar.from(Instant.parse(startStr).atZone(ZoneId.systemDefault()));
                         }
 
                         if (json.containsKey("paused") && !json.isNull("paused")) {
@@ -236,8 +235,7 @@ public class PhaserClientMessageDecoder extends ChannelInboundHandlerAdapter {
                         if (json.containsKey("cavity-start") && !json.isNull(
                                 "cavity-start")) {
                             String startStr = json.getString("cavity-start");
-                            initCavityStart = DatatypeConverter.parseDateTime(
-                                    startStr);
+                            initCavityStart = GregorianCalendar.from(Instant.parse(startStr).atZone(ZoneId.systemDefault()));
                         }
 
                         if (json.containsKey("progress") && !json.isNull(
@@ -270,7 +268,7 @@ public class PhaserClientMessageDecoder extends ChannelInboundHandlerAdapter {
                     Calendar cavityStart = null;
                     if (json.containsKey("start") && !json.isNull("start")) {
                         String startStr = json.getString("start");
-                        cavityStart = DatatypeConverter.parseDateTime(startStr);
+                        cavityStart = GregorianCalendar.from(Instant.parse(startStr).atZone(ZoneId.systemDefault()));
                     }
                     String cavity = null;
                     if (json.containsKey("name") && !json.isNull("name")) {
