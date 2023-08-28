@@ -13,6 +13,9 @@ import javax.swing.table.AbstractTableModel;
  */
 public abstract class CavityNameTableModel extends AbstractTableModel {
 
+    /**
+     * Column names
+     */
     protected final static List<String> COLUMN_NAMES = Arrays.asList(new String[]{"Cavities"});
     List<String> cavities = new ArrayList<>();
 

@@ -14,6 +14,9 @@ import javax.swing.JPanel;
  */
 public class FrostedGlassPane extends JPanel {
 
+    /**
+     * Create a new FrostedGlassPane.
+     */
     public FrostedGlassPane() {
         setOpaque(false);
     }

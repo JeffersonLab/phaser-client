@@ -42,20 +42,42 @@ public class GenericButtonAreaLayout implements LayoutManager {
 
     private final int topMargin = 17;
 
+    /**
+     * syncAllWidths
+     */
     protected boolean syncAllWidths;
+
+    /**
+     * Amount of padding
+     */
     protected int padding;
+
     /**
      * If true, children are lumped together in parent.
      */
     protected boolean centersChildren;
+
+    /**
+     * Orientation
+     */
     private int orientation;
+
+    /**
+     * reverseButtons
+     */
     private boolean reverseButtons;
     /**
-     * Indicates whether or not centersChildren should be used vs the
+     * Indicates whether centersChildren should be used vs the
      * orientation. This is done for backward compatability for subclassers.
      */
     private boolean useOrientation;
 
+    /**
+     * Create a new GenericButtonAreaLayout.
+     *
+     * @param syncAllWidths True to syncAllWidths
+     * @param padding Amount of padding
+     */
     public GenericButtonAreaLayout(boolean syncAllWidths, int padding) {
         this.syncAllWidths = syncAllWidths;
         this.padding = padding;
@@ -63,9 +85,17 @@ public class GenericButtonAreaLayout implements LayoutManager {
         useOrientation = false;
     }
 
-    public GenericButtonAreaLayout(boolean syncAllSizes, int padding, int orientation,
+    /**
+     * Create a new GenericButtonAreaLayout.
+     *
+     * @param syncAllWidths True to syncAllWidths
+     * @param padding Amount of padding
+     * @param orientation Orientation
+     * @param reverseButtons True to reverse buttons
+     */
+    public GenericButtonAreaLayout(boolean syncAllWidths, int padding, int orientation,
             boolean reverseButtons) {
-        this(syncAllSizes, padding);
+        this(syncAllWidths, padding);
         useOrientation = true;
         this.orientation = orientation;
         this.reverseButtons = reverseButtons;

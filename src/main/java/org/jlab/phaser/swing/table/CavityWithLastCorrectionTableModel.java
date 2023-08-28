@@ -15,6 +15,9 @@ import org.jlab.phaser.model.CavityWithLastCorrection;
  */
 public class CavityWithLastCorrectionTableModel extends AbstractTableModel {
 
+    /**
+     * Column names
+     */
     protected final static List<String> COLUMN_NAMES = Arrays.asList(new String[]{"Name", "Last Correction"});
     List<CavityWithLastCorrection> cavities = new ArrayList<>();
 
@@ -142,6 +145,12 @@ public class CavityWithLastCorrectionTableModel extends AbstractTableModel {
         return COLUMN_NAMES.size();
     }
 
+    /**
+     * Get row.
+     *
+     * @param rowIndex The row index
+     * @return The row
+     */
     public CavityWithLastCorrection getRow(int rowIndex) {
         return cavities.get(rowIndex);
     }

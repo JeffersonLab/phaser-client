@@ -10,7 +10,14 @@ package org.jlab.phaser.swing.dialog.chooser;
  * @param <E> Generic element type
  */
 public abstract class Chooser<E> {
+    /**
+     * CANCEL
+     */
     public static final int CANCEL_OPTION = 0;
+
+    /**
+     * APPROVE
+     */
     public static final int APPROVE_OPTION = 1;
     private final ChooserDialog<E> dialog;
     
