@@ -47,7 +47,12 @@ public final class PhaserSwingClient {
      * Stores the client properties (configuration parameters from file).
      */
     public static final Properties CLIENT_PROPERTIES = new Properties();
-    
+
+    /**
+     * Contain the application release data and version.
+     */
+    public static final Properties RELEASE_PROPERTIES = new Properties();
+
     private static final Logger LOGGER = Logger.getLogger(
             PhaserSwingClient.class.getName());
 
@@ -184,12 +189,22 @@ public final class PhaserSwingClient {
     public static void main(String[] args) {
         try (InputStream propStream
                 = PhaserSwingClient.class.getClassLoader().getResourceAsStream(
-                        "client.properties")) {
+                        "client.properties");
+             InputStream releaseStream = PhaserSwingClient.class.getClassLoader().getResourceAsStream(
+                "release.properties")) {
             if (propStream == null) {
                 throw new InitializationException(
                         "Did not find client.properties");
             }
+
+            if (releaseStream == null) {
+                throw new InitializationException(
+                        "File Not Found; Configuration File: release.properties");
+            }
+
             CLIENT_PROPERTIES.load(propStream);
+
+            RELEASE_PROPERTIES.load(releaseStream);
 
             String host = CLIENT_PROPERTIES.getProperty("server.host");
             int port = Integer.parseInt(CLIENT_PROPERTIES.getProperty(

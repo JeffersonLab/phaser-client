@@ -71,7 +71,7 @@ public final class HelpDialog extends javax.swing.JDialog {
 
         jLabel1.setText("Client Version:");
 
-        clientVersion.setText("1.4.1");
+        clientVersion.setText(PhaserSwingClient.RELEASE_PROPERTIES.getProperty("VERSION"));
 
         jLabel3.setText("Contact:");
 
@@ -93,7 +93,7 @@ public final class HelpDialog extends javax.swing.JDialog {
 
         jLabel6.setText("Client Release Date:");
 
-        jLabel7.setText("October 15 2018");
+        jLabel7.setText(PhaserSwingClient.RELEASE_PROPERTIES.getProperty("RELEASE_DATE"));
 
         jLabel8.setText("Server Version:");
 
