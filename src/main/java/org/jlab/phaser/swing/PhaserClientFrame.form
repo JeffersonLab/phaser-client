@@ -245,7 +245,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cavityProgressBar" pref="177" max="32767" attributes="0"/>
+                              <Component id="cavityProgressBar" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>

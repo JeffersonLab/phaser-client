@@ -187,7 +187,7 @@ public class ResultFilterChooserDialog extends ChooserDialog<ResultFilter> {
         setResizable(false);
         setSize(new java.awt.Dimension(650, 350));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setText("Job #:");
 
@@ -304,7 +304,7 @@ public class ResultFilterChooserDialog extends ChooserDialog<ResultFilter> {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel8))
                             .addComponent(jLabel9))
-                        .addGap(0, 108, Short.MAX_VALUE)))
+                        .addGap(0, 113, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
