@@ -82,22 +82,22 @@ javadoc {
     }
 }
 
-task clientRun(type: JavaExec, dependsOn: build) {
+task runClient(type: JavaExec, dependsOn: build) {
     classpath = files('src/test/resources')
     classpath += sourceSets.main.runtimeClasspath
     classpath += files('config')
     mainClass.set('org.jlab.phaser.PhaserSwingClient')
     systemProperties = [
-            'java.util.logging.config.file': 'config/debug-logging.properties'
+            'java.util.logging.config.file': 'config/logging.properties'
     ]
 }
 
-task serverRun(type: JavaExec, dependsOn: build) {
+task runServer(type: JavaExec, dependsOn: build) {
     classpath = files('src/test/resources')
     classpath += sourceSets.test.runtimeClasspath;
     classpath += files('config')
     mainClass.set('org.jlab.phaser.TestServer')
     systemProperties = [
-            'java.util.logging.config.file': 'config/debug-logging.properties'
+            'java.util.logging.config.file': 'config/logging.properties'
     ]
 }
