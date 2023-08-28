@@ -18,6 +18,27 @@ A graphical user interface client for operators to interact with the RF Phaser s
 ## Overview
 This application provides an interface for operators to control the RF Phaser server.  The server provides a means to optimize RF cavity phase angle in order to maximize the amount of energy to the accelerator beam, while minimizing energy spread.  See [docs](https://github.com/JeffersonLab/phaser-client/tree/main/doc).
 
+## Install
+This application requires a Java 8+ JVM and standard library to run.
+
+Download from [Releases](https://github.com/JeffersonLab/phaser-client/releases) or [build](https://github.com/JeffersonLab/phaser-client#build) yourself.
+
+Start scripts are created and dependencies collected by the Gradle distribution target:
+```
+gradlew assembleDist
+```
+
+Launch with:
+
+UNIX:
+```
+bin/phaser-client
+```
+Windows:
+```
+bin/phaser-client.bat
+```
+
 ## Configure
 The app expects two configuration files:
 
