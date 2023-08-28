@@ -20,6 +20,9 @@ public final class SkipAction extends AbstractAction {
 
     private static final Logger LOGGER = Logger.getLogger(SkipAction.class.getName());
 
+    /**
+     * The frame.
+     */
     private final PhaserClientFrame frame;
 
     /**

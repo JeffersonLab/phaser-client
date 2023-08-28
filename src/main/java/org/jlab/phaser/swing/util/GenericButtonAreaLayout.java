@@ -113,6 +113,11 @@ public class GenericButtonAreaLayout implements LayoutManager {
         this.padding = newPadding;
     }
 
+    /**
+     * Get padding.
+     *
+     * @return The padding
+     */
     public int getPadding() {
         return padding;
     }
@@ -122,6 +127,11 @@ public class GenericButtonAreaLayout implements LayoutManager {
         useOrientation = false;
     }
 
+    /**
+     * Get centersChildren.
+     *
+     * @return centersChildren
+     */
     public boolean getCentersChildren() {
         return centersChildren;
     }

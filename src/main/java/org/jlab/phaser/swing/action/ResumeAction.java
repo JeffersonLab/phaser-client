@@ -21,6 +21,9 @@ public final class ResumeAction extends AbstractAction {
     private static final Logger LOGGER = Logger.getLogger(
             ResumeAction.class.getName());
 
+    /**
+     * The frame.
+     */
     private final PhaserClientFrame frame;
 
     /**

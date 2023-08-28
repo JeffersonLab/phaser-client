@@ -15,6 +15,9 @@ import org.jlab.phaser.swing.dialog.ResultsDialog;
  */
 public final class PreviousJobsAction extends AbstractAction {
 
+    /**
+     * The dialog.
+     */
     private final ResultsDialog dialog;
 
     /**
