@@ -21,6 +21,9 @@ public final class PauseAction extends AbstractAction {
     private static final Logger LOGGER = Logger.getLogger(
             PauseAction.class.getName());
 
+    /**
+     * The frame.
+     */
     private final PhaserClientFrame frame;
 
     /**

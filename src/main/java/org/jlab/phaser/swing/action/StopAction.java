@@ -21,6 +21,9 @@ public final class StopAction extends AbstractAction {
     private static final Logger LOGGER = Logger.getLogger(
             StopAction.class.getName());
 
+    /**
+     * The frame.
+     */
     private final PhaserClientFrame frame;
 
     /**

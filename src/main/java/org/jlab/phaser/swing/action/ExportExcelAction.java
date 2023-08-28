@@ -37,6 +37,9 @@ public final class ExportExcelAction extends AbstractAction {
     private static final Logger LOGGER = Logger.getLogger(
             ExportExcelAction.class.getName());
 
+    /**
+     * The dialog.
+     */
     private final ResultsDialog dialog;
 
     /**

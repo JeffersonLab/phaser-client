@@ -168,6 +168,11 @@ public final class NewJobDialog extends JDialog {
         return new JobSpecification(correct, continuous, maxPhaseError, maxMomentumError, kickSamples, cavityNames);
     }
 
+    /**
+     * Return the command console.
+     *
+     * @return The PhaserServerConsole
+     */
     public PhaserServerConsole getCommandConsole() {
         return frame.getPhaserServerConsole();
     }

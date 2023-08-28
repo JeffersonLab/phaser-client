@@ -22,6 +22,9 @@ public final class StartAction extends AbstractAction {
     private static final Logger LOGGER = Logger.getLogger(
             StartAction.class.getName());
 
+    /**
+     * The dialog
+     */
     private final NewJobDialog dialog;
 
     /**

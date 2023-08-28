@@ -25,6 +25,11 @@ public class JobTableModel extends AbstractTableModel {
         "<html><center>Kick<br/>Samples</center></html>", "# Results"});
     List<JobRecord> records = new ArrayList<>();
 
+    /**
+     * Create a new JobTableModel.
+     *
+     * @param timestampFormat The timestamp format
+     */
     public JobTableModel(String timestampFormat) {
         this.timestampFormat = timestampFormat;
     }

@@ -25,6 +25,9 @@ public final class ApplyCorrectionsAction extends AbstractAction {
 
     private static final Logger LOGGER = Logger.getLogger(ApplyCorrectionsAction.class.getName());
 
+    /**
+     * The dialog.
+     */
     private final ResultsDialog dialog;
 
     /**

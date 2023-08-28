@@ -29,8 +29,14 @@ public final class ExportElogAction extends AbstractAction {
 
     private static final Logger LOGGER = Logger.getLogger(ExportElogAction.class.getName());
 
+    /**
+     * The dialog.
+     */
     private final ResultsDialog dialog;
 
+    /**
+     * The logbooks.
+     */
     private final String LOGBOOKS = PhaserSwingClient.CLIENT_PROPERTIES.getProperty("elog.logbooks");
 
     /**
