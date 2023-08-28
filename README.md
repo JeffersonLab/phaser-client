@@ -20,11 +20,6 @@ This application requires a Java 8+ JVM and standard library to run.
 
 Download from [Releases](https://github.com/JeffersonLab/phaser-client/releases) or [build](https://github.com/JeffersonLab/phaser-client#build) yourself.
 
-Start scripts are created and dependencies collected by the Gradle distribution target:
-```
-gradlew assembleDist
-```
-
 Launch with:
 
 UNIX:
@@ -89,5 +84,9 @@ gradlew javadoc
 ```
 
 ## Release
-1. Bump the version number in build.gradle and commit and push to GitHub (using [Semantic Versioning](https://semver.org/)).   
-1. Create a new release on the GitHub [Releases](https://github.com/JeffersonLab/phaser-client/releases) page corresponding to same version in build.gradle (Enumerate changes and link issues).   Run the `assembleDist` Gradle build target and attach the generated zip to the release.
+1. Bump the version number in build.gradle and commit and push to GitHub (using [Semantic Versioning](https://semver.org/)).
+1. Run the Gradle distribution target:
+```
+gradlew assembleDist
+```
+3. Create a new release on the GitHub [Releases](https://github.com/JeffersonLab/phaser-client/releases) page corresponding to same version in build.gradle (Enumerate changes and link issues).   Attach the generated distribution zip to the release.
