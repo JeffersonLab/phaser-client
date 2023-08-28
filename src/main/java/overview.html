@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Phaser Swing Client API Overview</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <p>The Phaser Swing Client is an application for Operators at JLab to control the Phaser server.</p>
+        <div>
+            <h2>Usage</h2>
+            <p>
+                The Phaser Swing Client is distributed as an executable jar file.
+                It was developed as a certified product and Linux binaries can be found in the /cs/certified/apps/phaser file system path.
+                The Phaser Swing Client requires Java 7 or greater and can be launched on Linux with the following command:
+            </p>
+            <pre><kbd>
+./phaser-swing-client.sh                
+            </kbd></pre>  
+            Or to have debugging logged to the console:
+            <pre><kbd>
+./debug-phaser-swing-client.sh                
+            </kbd></pre>
+            Or to invoke Java manually (without the bash shell's Java version check):
+            <pre><kbd>
+java -jar phaser-swing-client.jar                
+            </kbd></pre>
+            <p>
+                The versioning is organized into "major.minor" where major 
+                versions indicate API changes and minor versions are for bug 
+                fixes and implementation changes.
+            </p>
+
+            <h2>Configuration</h2>
+            <p>
+                A Java properties file named client.properties is located in the config directory.
+                Users can set the host and port of the Phaser server here.  The URL to documentation is also specified here.
+            </p>      
+            <h2>Source Code</h2>
+            <p>The Java Phaser Swing Client application is named <em>phaser-swing-client</em> 
+                and is stored in the git repository on devl00.  It can be
+                accessed by members of the JLab accelerator group <em>epics</em> 
+                from an accelerator Linux machine with the command:</p>
+            <pre><kbd>
+git clone ssh://devl00/usr/devsite/git/phaser-swing-client.git 
+            </kbd></pre>
+            <p>
+                An Apache Ant build file (build.xml) is used to compile and
+                package the application.
+            </p>   
+        </div>        
+    </body>
+</html>

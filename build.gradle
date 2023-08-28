@@ -1,0 +1,92 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'distribution'
+}
+
+description = "RF Phaser Client"
+group 'org.jlab'
+version = '2.0.0'
+
+ext {
+    releaseDate = 'Aug 28 2023'
+}
+
+tasks.withType(JavaCompile) {
+    options.release = 8
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.glassfish:javax.json:1.1.4',
+                    'io.netty:netty-all:4.0.56.Final',
+                    'org.jlab:jlog:5.0.0',
+                    'org.apache.poi:poi:5.2.3',
+                    'org.apache.poi:poi-ooxml:5.2.3'
+
+    testImplementation 'junit:junit:4.12'
+}
+
+application {
+    mainClass.set('org.jlab.phaser.PhaserSwingClient')
+}
+
+startScripts {
+    classpath += files('config')
+
+    // https://discuss.gradle.org/t/classpath-in-application-plugin-is-building-always-relative-to-app-home-lib-directory/2012
+    doLast {
+        def windowsScriptFile = file getWindowsScript()
+        def unixScriptFile = file getUnixScript()
+        windowsScriptFile.text = windowsScriptFile.text.replace('%APP_HOME%\\lib\\config', '%APP_HOME%\\config')
+        unixScriptFile.text = unixScriptFile.text.replace('$APP_HOME/lib/config', '$APP_HOME/config')
+    }
+}
+
+run {
+    classpath += files('config')
+}
+
+distributions {
+    main {
+        contents {
+            into('config') {
+                from 'config'
+            }
+        }
+    }
+}
+
+processResources {
+    filesMatching('release.properties') {
+        filter {
+            String line -> line.replaceAll("@VERSION@", version)
+        }
+        filter {
+            String line -> line.replaceAll("@RELEASE_DATE@", releaseDate)
+        }
+    }
+}
+
+javadoc {
+    options.overview = "src/main/java/overview.html"
+    options.source = 8
+    options.with {
+        links 'https://docs.oracle.com/javase/8/docs/api/', 'https://netty.io/4.0/api/'
+    }
+}
+
+task testRun(type: JavaExec, dependsOn: build) {
+    classpath = files('src/test/resources')
+    classpath += sourceSets.main.runtimeClasspath
+    classpath += files('config')
+    mainClass.set('org.jlab.phaser.PhaserSwingClient')
+    systemProperties = [
+            'java.util.logging.config.file': 'config/debug-logging.properties'
+    ]
+}
