@@ -1,4 +1,4 @@
-# phaser-client
+# phaser-client [![CI](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yml/badge.svg)](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yml)
 Graphical client for operators to interact with the RF Phaser server
 
 ## Build
