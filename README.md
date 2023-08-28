@@ -83,6 +83,11 @@ db.user=phaser_reader
 db.password=password
 ```
 
+**Note**: Javadocs can be generated with the command:
+```
+gradlew javadoc
+```
+
 ## Release
 1. Bump the version number in build.gradle and commit and push to GitHub (using [Semantic Versioning](https://semver.org/)).   
 1. Create a new release on the GitHub [Releases](https://github.com/JeffersonLab/phaser-client/releases) page corresponding to same version in build.gradle (Enumerate changes and link issues).   Run the `assembleDist` Gradle build target and attach the generated zip to the release.
