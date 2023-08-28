@@ -3,9 +3,7 @@ A graphical user interface client for operators to interact with the RF Phaser s
 
 ---
 - [Overview](https://github.com/JeffersonLab/phaser-client#overview)
-- [Quick Start with Compose](https://github.com/JeffersonLab/phaser-client#quick-start-with-compose)
 - [Install](https://github.com/JeffersonLab/phaser-client#install)
-- [API](https://github.com/JeffersonLab/phaser-client#api)
 - [Configure](https://github.com/JeffersonLab/phaser-client#configure)
 - [Build](https://github.com/JeffersonLab/phaser-client#build)
 - [Develop](https://github.com/JeffersonLab/phaser-client#develop)
@@ -77,7 +75,7 @@ And run the client with:
 gradlew runClient
 ```
 
-**Note**: The client should be [configured](https://github.com/JeffersonLab/phaser-client#configure) to connect to the test server and Oracle DB on localhost and therefore `client.properties` should contain:
+**Note**: The default [configuration](https://github.com/JeffersonLab/phaser-client#configure) assumes a connection to the test server and Oracle DB on localhost and therefore `client.properties` contain:
 ```
 server.host=localhost
 server.port=2048
