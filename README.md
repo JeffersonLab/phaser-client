@@ -1,5 +1,5 @@
 # phaser-client [![CI](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yml/badge.svg)](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yml)
-Graphical user interface client for operators to interact with the RF Phaser server at JLab.
+A graphical user interface client for operators to interact with the RF Phaser server at JLab.
 
 ---
 - [Overview](https://github.com/JeffersonLab/phaser-client#overview)
@@ -16,8 +16,7 @@ Graphical user interface client for operators to interact with the RF Phaser ser
 ---
 
 ## Overview
-This application provides an interface for operators to control the RF Phaser server.  The server provides a means
-to optimize RF cavity phase angle in order to maximize the amount of energy to the accelerator beam, while minimizing energy spread.
+This application provides an interface for operators to control the RF Phaser server.  The server provides a means to optimize RF cavity phase angle in order to maximize the amount of energy to the accelerator beam, while minimizing energy spread.  See [docs](https://github.com/JeffersonLab/phaser-client/tree/main/doc).
 
 ## Configure
 The app expects two configuration files:
