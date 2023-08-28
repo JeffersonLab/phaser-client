@@ -16,7 +16,7 @@ A graphical user interface client for operators to interact with the RF Phaser s
 This application provides an interface for operators to control the RF Phaser server.  The server provides a means to optimize RF cavity phase angle in order to maximize the amount of energy to the accelerator beam, while minimizing energy spread.  See [docs](https://github.com/JeffersonLab/phaser-client/tree/main/doc).
 
 ## Install
-This application requires a Java 8+ JVM and standard library to run.  The app requires an Oracle database ([schema setup](https://github.com/JeffersonLab/phaser-client/tree/main/docker/oracle/setup)) and an RF Phaser server.  Docker is used to provide a local Oracle database during development and testing.  A simple test server is provided in this project as well.
+This application requires a Java 8+ JVM and standard library to run.  The app requires an Oracle database ([schema setup](https://github.com/JeffersonLab/phaser-client/tree/main/docker/oracle/setup)) and an RF Phaser server.  Docker is used to provide a local Oracle database during development and testing.  A simple RF Phaser test server is provided in this project as well.
 
 Download from [Releases](https://github.com/JeffersonLab/phaser-client/releases) or [build](https://github.com/JeffersonLab/phaser-client#build) the [distribution](https://github.com/JeffersonLab/phaser-client#release) yourself.
 
