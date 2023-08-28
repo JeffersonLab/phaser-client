@@ -42,7 +42,7 @@ public class PopupMenuTableHeaderRenderer extends JPanel implements TableCellRen
         super(new BorderLayout());
 
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource(
-                "/org/jlab/phaser/swing/dialog/south.png"));
+                "/south.png"));
 
         button = MenuButton.create(icon, menu);
         this.menu = menu;

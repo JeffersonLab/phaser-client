@@ -54,7 +54,7 @@ public final class WaitDialog extends JDialog {
 
         jLabel1.setText("Please Wait...");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jlab/phaser/swing/dialog/indicator16x16.gif"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/indicator16x16.gif"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

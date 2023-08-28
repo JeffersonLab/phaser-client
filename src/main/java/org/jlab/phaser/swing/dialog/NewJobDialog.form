@@ -206,7 +206,7 @@
         <Component class="javax.swing.JButton" name="allRightButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/org/jlab/phaser/swing/dialog/doubleeast.png"/>
+              <Image iconType="3" name="/doubleeast.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Move All Right"/>
           </Properties>
@@ -217,7 +217,7 @@
         <Component class="javax.swing.JButton" name="rightButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/org/jlab/phaser/swing/dialog/east.png"/>
+              <Image iconType="3" name="/east.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Move Selected Right"/>
           </Properties>
@@ -228,7 +228,7 @@
         <Component class="javax.swing.JButton" name="leftButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/org/jlab/phaser/swing/dialog/west.png"/>
+              <Image iconType="3" name="/west.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Move Selected Left"/>
           </Properties>
@@ -239,7 +239,7 @@
         <Component class="javax.swing.JButton" name="allLeftButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/org/jlab/phaser/swing/dialog/doublewest.png"/>
+              <Image iconType="3" name="/doublewest.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Move All Left"/>
           </Properties>
@@ -278,7 +278,7 @@
         <Component class="javax.swing.JButton" name="upButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/org/jlab/phaser/swing/dialog/north.png"/>
+              <Image iconType="3" name="/north.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Move Selected Up One"/>
           </Properties>
@@ -289,7 +289,7 @@
         <Component class="javax.swing.JButton" name="downButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/org/jlab/phaser/swing/dialog/south.png"/>
+              <Image iconType="3" name="/south.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Move Selected Down One"/>
           </Properties>
@@ -300,7 +300,7 @@
         <Component class="javax.swing.JButton" name="bottomButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/org/jlab/phaser/swing/dialog/doublesouth.png"/>
+              <Image iconType="3" name="/doublesouth.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Move Selected to Bottom"/>
           </Properties>
@@ -311,7 +311,7 @@
         <Component class="javax.swing.JButton" name="topButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/org/jlab/phaser/swing/dialog/doublenorth.png"/>
+              <Image iconType="3" name="/doublenorth.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Move Selected to Top"/>
           </Properties>

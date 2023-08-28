@@ -257,7 +257,7 @@ public final class NewJobDialog extends JDialog {
         availableTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(availableTable);
 
-        allRightButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jlab/phaser/swing/dialog/doubleeast.png"))); // NOI18N
+        allRightButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/doubleeast.png"))); // NOI18N
         allRightButton.setToolTipText("Move All Right");
         allRightButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -265,7 +265,7 @@ public final class NewJobDialog extends JDialog {
             }
         });
 
-        rightButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jlab/phaser/swing/dialog/east.png"))); // NOI18N
+        rightButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/east.png"))); // NOI18N
         rightButton.setToolTipText("Move Selected Right");
         rightButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -273,7 +273,7 @@ public final class NewJobDialog extends JDialog {
             }
         });
 
-        leftButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jlab/phaser/swing/dialog/west.png"))); // NOI18N
+        leftButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/west.png"))); // NOI18N
         leftButton.setToolTipText("Move Selected Left");
         leftButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,7 +281,7 @@ public final class NewJobDialog extends JDialog {
             }
         });
 
-        allLeftButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jlab/phaser/swing/dialog/doublewest.png"))); // NOI18N
+        allLeftButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/doublewest.png"))); // NOI18N
         allLeftButton.setToolTipText("Move All Left");
         allLeftButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,7 +298,7 @@ public final class NewJobDialog extends JDialog {
         scheduledTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(scheduledTable);
 
-        upButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jlab/phaser/swing/dialog/north.png"))); // NOI18N
+        upButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/north.png"))); // NOI18N
         upButton.setToolTipText("Move Selected Up One");
         upButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -306,7 +306,7 @@ public final class NewJobDialog extends JDialog {
             }
         });
 
-        downButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jlab/phaser/swing/dialog/south.png"))); // NOI18N
+        downButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/south.png"))); // NOI18N
         downButton.setToolTipText("Move Selected Down One");
         downButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -314,7 +314,7 @@ public final class NewJobDialog extends JDialog {
             }
         });
 
-        bottomButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jlab/phaser/swing/dialog/doublesouth.png"))); // NOI18N
+        bottomButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/doublesouth.png"))); // NOI18N
         bottomButton.setToolTipText("Move Selected to Bottom");
         bottomButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -322,7 +322,7 @@ public final class NewJobDialog extends JDialog {
             }
         });
 
-        topButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jlab/phaser/swing/dialog/doublenorth.png"))); // NOI18N
+        topButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/doublenorth.png"))); // NOI18N
         topButton.setToolTipText("Move Selected to Top");
         topButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
