@@ -27,7 +27,8 @@ dependencies {
                     'io.netty:netty-all:4.0.56.Final',
                     'org.jlab:jlog:5.0.0',
                     'org.apache.poi:poi:5.2.3',
-                    'org.apache.poi:poi-ooxml:5.2.3'
+                    'org.apache.poi:poi-ooxml:5.2.3',
+                    'com.oracle.database.jdbc:ojdbc8:23.2.0.0'
 
     testImplementation 'junit:junit:4.12'
 }
@@ -81,11 +82,21 @@ javadoc {
     }
 }
 
-task testRun(type: JavaExec, dependsOn: build) {
+task clientRun(type: JavaExec, dependsOn: build) {
     classpath = files('src/test/resources')
     classpath += sourceSets.main.runtimeClasspath
     classpath += files('config')
     mainClass.set('org.jlab.phaser.PhaserSwingClient')
+    systemProperties = [
+            'java.util.logging.config.file': 'config/debug-logging.properties'
+    ]
+}
+
+task serverRun(type: JavaExec, dependsOn: build) {
+    classpath = files('src/test/resources')
+    classpath += sourceSets.test.runtimeClasspath;
+    classpath += files('config')
+    mainClass.set('org.jlab.phaser.TestServer')
     systemProperties = [
             'java.util.logging.config.file': 'config/debug-logging.properties'
     ]
