@@ -10,7 +10,8 @@ A graphical user interface client for operators to interact with the RF Phaser s
 - [Build](https://github.com/JeffersonLab/phaser-client#build)
 - [Develop](https://github.com/JeffersonLab/phaser-client#develop)
 - [Release](https://github.com/JeffersonLab/phaser-client#release)
-- [Deploy](https://github.com/JeffersonLab/phaser-client#deploy) 
+- [Deploy](https://github.com/JeffersonLab/phaser-client#deploy)
+- [See Also](https://github.com/JeffersonLab/phaser-client#see-also)  
 ---
 
 ## Overview
@@ -111,3 +112,7 @@ cd /a/certified/rhel-9-x86_64/bin
 unlink phaser-client
 ln -s ../../apps/phaser/2.0.0/bin/phaser-client-from-nested-symlinks phaser-client
 ```
+
+## See Also
+- [icalibrate](https://github.com/JeffersonLab/icalibrate)
+- [jlog](https://github.com/JeffersonLab/jlog)
