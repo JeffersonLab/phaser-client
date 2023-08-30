@@ -83,6 +83,8 @@ db.password=password
 gradlew javadoc
 ```
 
+**Note**: The graphical Java Swing forms were built using the [Apache Netbeans](https://netbeans.apache.org/) Matisse builder tool.  It's recommended that graphical component modifications be made using this tool, which modifies the XML `*.form` files.  The XML is used to dyanamically generate Java Swing code.  
+
 ## Release
 1. Bump the version number in build.gradle and commit and push to GitHub (using [Semantic Versioning](https://semver.org/)).
 1. Run the Gradle distribution target:
