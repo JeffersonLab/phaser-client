@@ -96,7 +96,7 @@ gradlew assembleDist
 3. Create a new release on the GitHub [Releases](https://github.com/JeffersonLab/phaser-client/releases) page corresponding to same version in build.gradle (Enumerate changes and link issues).   Attach the generated distribution zip to the release.
 
 ## Deploy
-At Jefferson Lab this application is deployed to the certified apps area and accessed via JMenu.  Deploying a new version typically looks like (version 2.0.0 shown):
+At Jefferson Lab this application is deployed to the certified apps area and launched via JMenu using search keyword `phaser`.  Deploying a new version typically looks like (version 2.0.0 shown):
 ```
 # Can't wget from ops network so use dev then scp
 ssh devl00
