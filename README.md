@@ -10,6 +10,7 @@ A graphical user interface client for operators to interact with the RF Phaser s
 - [Build](https://github.com/JeffersonLab/phaser-client#build)
 - [Develop](https://github.com/JeffersonLab/phaser-client#develop)
 - [Release](https://github.com/JeffersonLab/phaser-client#release)
+- [Deploy](https://github.com/JeffersonLab/phaser-client#deploy) 
 ---
 
 ## Overview
@@ -92,3 +93,21 @@ gradlew javadoc
 gradlew assembleDist
 ```
 3. Create a new release on the GitHub [Releases](https://github.com/JeffersonLab/phaser-client/releases) page corresponding to same version in build.gradle (Enumerate changes and link issues).   Attach the generated distribution zip to the release.
+
+## Deploy
+At Jefferson Lab this application is deployed to the certified apps area and accessed via JMenu.  Deploying a new version typically looks like (version 2.0.0 shown):
+```
+# Can't wget from ops network so use dev then scp
+ssh devl00
+cd /tmp
+wget https://github.com/JeffersonLab/phaser-client/releases/download/v2.0.0/phaser-client-2.0.0.zip
+
+ssh sqam@opsl00
+cd /tmp
+scp devl00:/tmp/phaser-client-2.0.0.zip .
+unzip phaser-client-2.0.0.zip
+mv phaser-client-2.0.0 /a/certified/apps/phaser/2.0.0
+cd /a/certified/rhel-9-x86_64/bin
+unlink phaser-client
+ln -s ../../apps/phaser/2.0.0/bin/phaser-client-from-nested-symlinks phaser-client
+```
