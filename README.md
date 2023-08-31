@@ -110,7 +110,7 @@ unzip phaser-client-2.0.0.zip
 mv phaser-client-2.0.0 /cs/certified/apps/phaser/2.0.0
 cd /cs/certified/apps/phaser
 unlink PRO
-ln -s /cs/certified/apps/phaser/2.0.0 PRO
+ln -s 2.0.0 PRO
 
 # Note: app is in path as phaser-swing-client at JLAB, plus certified uses architecture specific links
 
