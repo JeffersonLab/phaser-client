@@ -108,9 +108,23 @@ cd /tmp
 scp devl00:/tmp/phaser-client-2.0.0.zip .
 unzip phaser-client-2.0.0.zip
 mv phaser-client-2.0.0 /a/certified/apps/phaser/2.0.0
-cd /a/certified/rhel-9-x86_64/bin
-unlink phaser-client
-ln -s ../../apps/phaser/2.0.0/bin/phaser-client-from-nested-symlinks phaser-client
+
+# Note: app is in path as phaser-swing-client at JLAB, plus certified uses architecture specific links
+
+# RHEL6
+cd /cs/certified/rhel-6-ia32/bin
+unlink phaser-swing-client
+ln -s /cs/certified/apps/phaser/PRO/bin/phaser-client phaser-swing-client
+
+# RHEL7
+cd /cs/certified/rhel-7-x86_64/bin
+unlink phaser-swing-client
+ln -s /cs/certified/apps/phaser/PRO/bin/phaser-client phaser-swing-client
+
+#RHEL9
+cd /cs/certified/rhel-9-x86_64/bin
+unlink phaser-swing-client
+ln -s /cs/certified/apps/phaser/PRO/bin/phaser-client phaser-swing-client
 ```
 
 ## See Also
