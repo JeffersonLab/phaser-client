@@ -107,7 +107,10 @@ ssh sqam@opsl00
 cd /tmp
 scp devl00:/tmp/phaser-client-2.0.0.zip .
 unzip phaser-client-2.0.0.zip
-mv phaser-client-2.0.0 /a/certified/apps/phaser/2.0.0
+mv phaser-client-2.0.0 /cs/certified/apps/phaser/2.0.0
+cd /cs/certified/apps/phaser
+unlink PRO
+ln -s /cs/certified/apps/phaser/2.0.0 PRO
 
 # Note: app is in path as phaser-swing-client at JLAB, plus certified uses architecture specific links
 
