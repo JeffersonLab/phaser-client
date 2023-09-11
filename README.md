@@ -98,14 +98,10 @@ gradlew assembleDist
 ## Deploy
 At Jefferson Lab this application is deployed to the certified apps area and launched via JMenu using search keyword `phaser`.  Deploying a new version typically looks like (version 2.0.0 shown):
 ```
-# Can't wget from ops network so use dev then scp
-ssh devl00
+# Install on dev fiefdom and it will be automatically propogated to ops; note: firewall blocks wget on ops fiefdom anyways
+ssh sqam@devl00
 cd /tmp
 wget https://github.com/JeffersonLab/phaser-client/releases/download/v2.0.0/phaser-client-2.0.0.zip
-
-ssh sqam@opsl00
-cd /tmp
-scp devl00:/tmp/phaser-client-2.0.0.zip .
 unzip phaser-client-2.0.0.zip
 mv phaser-client-2.0.0 /cs/certified/apps/phaser/2.0.0
 cd /cs/certified/apps/phaser
