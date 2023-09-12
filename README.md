@@ -107,23 +107,6 @@ mv phaser-client-2.0.0 /cs/certified/apps/phaser/2.0.0
 cd /cs/certified/apps/phaser
 unlink PRO
 ln -s 2.0.0 PRO
-
-# Note: app is in path as phaser-swing-client at JLAB, plus certified uses architecture specific links
-
-# RHEL6
-cd /cs/certified/rhel-6-ia32/bin
-unlink phaser-swing-client
-ln -s /cs/certified/apps/phaser/PRO/bin/phaser-client phaser-swing-client
-
-# RHEL7
-cd /cs/certified/rhel-7-x86_64/bin
-unlink phaser-swing-client
-ln -s /cs/certified/apps/phaser/PRO/bin/phaser-client phaser-swing-client
-
-#RHEL9
-cd /cs/certified/rhel-9-x86_64/bin
-unlink phaser-swing-client
-ln -s /cs/certified/apps/phaser/PRO/bin/phaser-client phaser-swing-client
 ```
 
 Generally the [configure](https://github.com/JeffersonLab/phaser-client/tree/main#configure) step must be done as the default configs assume localhost.   Copying the previous version config dir may be sufficient.
