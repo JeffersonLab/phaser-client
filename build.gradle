@@ -6,10 +6,10 @@ plugins {
 
 description = "RF Phaser Client"
 group 'org.jlab'
-version = '2.0.0'
+version = '2.0.1'
 
 ext {
-    releaseDate = 'Aug 28 2023'
+    releaseDate = 'Sep 12 2023'
 }
 
 tasks.withType(JavaCompile) {
