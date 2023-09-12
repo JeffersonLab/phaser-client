@@ -5,7 +5,11 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalQuery;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -217,7 +221,8 @@ public class PhaserClientMessageDecoder extends ChannelInboundHandlerAdapter {
 
                         if (json.containsKey("start") && !json.isNull("start")) {
                             String startStr = json.getString("start");
-                            jobStart = GregorianCalendar.from(Instant.parse(startStr).atZone(ZoneId.systemDefault()));
+                            LocalDateTime localTime = LocalDateTime.parse(startStr);
+                            jobStart = GregorianCalendar.from(localTime.atZone(ZoneId.systemDefault()));
                         }
 
                         if (json.containsKey("paused") && !json.isNull("paused")) {
@@ -235,7 +240,8 @@ public class PhaserClientMessageDecoder extends ChannelInboundHandlerAdapter {
                         if (json.containsKey("cavity-start") && !json.isNull(
                                 "cavity-start")) {
                             String startStr = json.getString("cavity-start");
-                            initCavityStart = GregorianCalendar.from(Instant.parse(startStr).atZone(ZoneId.systemDefault()));
+                            LocalDateTime localTime = LocalDateTime.parse(startStr);
+                            initCavityStart = GregorianCalendar.from(localTime.atZone(ZoneId.systemDefault()));
                         }
 
                         if (json.containsKey("progress") && !json.isNull(
@@ -268,7 +274,8 @@ public class PhaserClientMessageDecoder extends ChannelInboundHandlerAdapter {
                     Calendar cavityStart = null;
                     if (json.containsKey("start") && !json.isNull("start")) {
                         String startStr = json.getString("start");
-                        cavityStart = GregorianCalendar.from(Instant.parse(startStr).atZone(ZoneId.systemDefault()));
+                        LocalDateTime localTime = LocalDateTime.parse(startStr);
+                        cavityStart = GregorianCalendar.from(localTime.atZone(ZoneId.systemDefault()));
                     }
                     String cavity = null;
                     if (json.containsKey("name") && !json.isNull("name")) {
