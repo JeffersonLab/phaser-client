@@ -126,6 +126,8 @@ unlink phaser-swing-client
 ln -s /cs/certified/apps/phaser/PRO/bin/phaser-client phaser-swing-client
 ```
 
+Generally the [configure](https://github.com/JeffersonLab/phaser-client/tree/main#configure) step must be done as the default configs assume localhost.   Copying the previous version config dir may be sufficient.
+
 ## See Also
 - [icalibrate](https://github.com/JeffersonLab/icalibrate)
 - [jlog](https://github.com/JeffersonLab/jlog)
