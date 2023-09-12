@@ -163,7 +163,7 @@ public class PhaserClientMessageDecoder extends ChannelInboundHandlerAdapter {
      *
      * @param json The JsonObject read on the channel
      */
-    private void parseAndDispatchNotification(JsonObject json) {
+    protected void parseAndDispatchNotification(JsonObject json) {
         String notificationType = json.getString("notification");
         if (notificationType != null) {
             switch (notificationType) {
