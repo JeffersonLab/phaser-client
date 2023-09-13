@@ -109,7 +109,9 @@ unlink PRO
 ln -s 2.0.0 PRO
 ```
 
-Generally the [configure](https://github.com/JeffersonLab/phaser-client/tree/main#configure) step must be done as the default configs assume localhost.   Copying the previous version config dir may be sufficient.
+Generally the [configure](https://github.com/JeffersonLab/phaser-client/tree/main#configure) step must be done as the default configs assume localhost.   Copying the previous version config dir may be sufficient.  It's also a good idea to launch the new version of the app and at least verify the Help dialog indicates the new version.
+
+**Note**: The JLab certified app linking system may attempt to use nested relative linking, which [doesn't work with our start script](https://github.com/JeffersonLab/phaser-client/issues/2).  Be sure absolute paths are set.  Generally certified apps are available in a fiefdom user's path by default via this linking.  Currently the app is available on the path as `phaser-client`.
 
 ## See Also
 - [icalibrate](https://github.com/JeffersonLab/icalibrate)
