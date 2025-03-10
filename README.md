@@ -59,7 +59,7 @@ gradlew build
 ## Develop
 In order to iterate rapidly when making changes it's often useful to run the app directly on the local workstation, perhaps leveraging an IDE.  In this scenario run the Oracle service dependency with:
 ```
-docker compose -f deps.yml up
+docker compose -f deps.yaml up
 ```
 
 Then run the test server with:
