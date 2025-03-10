@@ -32,7 +32,7 @@ repositories {
 dependencies {
     implementation 'org.glassfish:javax.json:1.1.4',
                     'io.netty:netty-all:4.0.56.Final',
-                    'org.jlab:jlog:5.0.0',
+                    'org.jlab:jlog:5.1.0',
                     'org.apache.poi:poi:5.2.3',
                     'org.apache.poi:poi-ooxml:5.2.3',
                     'com.oracle.database.jdbc:ojdbc8:23.2.0.0'
