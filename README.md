@@ -101,6 +101,9 @@ cd /tmp
 wget https://github.com/JeffersonLab/phaser-client/releases/download/v2.0.0/phaser-client-2.0.0.zip
 unzip phaser-client-2.0.0.zip
 mv phaser-client-2.0.0 /cs/certified/apps/phaser/2.0.0
+# Generally want to copy over previous config
+cp /cs/certified/apps/phaser/PRO/config/client.properties /cs/certified/apps/phaser/2.0.0/config
+# Set PRO link
 cd /cs/certified/apps/phaser
 unlink PRO
 ln -s 2.0.0 PRO
