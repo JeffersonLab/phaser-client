@@ -1,4 +1,4 @@
-# phaser-client [![CI](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yml/badge.svg)](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yml)
+# phaser-client [![CI](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yaml/badge.svg)](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yaml)
 A graphical user interface client for operators to interact with the RF Phaser server at JLab.
 
 ![Screenshot](https://raw.githubusercontent.com/JeffersonLab/phaser-client/main/Screenshot.png)
@@ -88,12 +88,9 @@ gradlew javadoc
 **Note**: The graphical Java Swing forms were built using the [Apache Netbeans](https://netbeans.apache.org/) Matisse builder tool.  It's recommended that graphical component modifications be made using this tool, which modifies the XML `*.form` files.  The XML is used to dyanamically generate Java Swing code.  
 
 ## Release
-1. Bump the version number in build.gradle and commit and push to GitHub (using [Semantic Versioning](https://semver.org/)).
-1. Run the Gradle distribution target:
-```
-gradlew assembleDist
-```
-3. Create a new release on the GitHub [Releases](https://github.com/JeffersonLab/phaser-client/releases) page corresponding to same version in build.gradle (Enumerate changes and link issues).   Attach the generated distribution zip to the release.
+1. Bump the version number in the VERSION file and commit and push to GitHub (using [Semantic Versioning](https://semver.org/)).
+1. The CD GitHub Action should run automatically invoking:
+    - The Create release GitHub Action to tag the source and create release notes summarizing any pull requests. Edit the release notes to add any missing details. A distribution zip file artifact is attached to the release.
 
 ## Deploy
 At Jefferson Lab this application is deployed to the certified apps area and launched via JMenu using search keyword `phaser`.  Deploying a new version typically looks like (version 2.0.0 shown):

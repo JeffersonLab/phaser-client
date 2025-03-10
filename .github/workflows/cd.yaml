@@ -1,0 +1,13 @@
+name: CD
+
+on:
+  push:
+    paths:
+      - 'VERSION'
+
+jobs:
+  release:
+    uses: jeffersonlab/java-workflows/.github/workflows/gh-release.yaml@v2
+    with:
+      files: build/distributions/phaser-client*.zip
+    secrets: inherit
