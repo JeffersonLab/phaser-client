@@ -6,6 +6,7 @@ A graphical user interface client for operators to interact with the RF Phaser s
 ---
 - [Overview](https://github.com/JeffersonLab/phaser-client#overview)
 - [Install](https://github.com/JeffersonLab/phaser-client#install)
+- [API](https://github.com/JeffersonLab/phaser-client#api) 
 - [Configure](https://github.com/JeffersonLab/phaser-client#configure)
 - [Build](https://github.com/JeffersonLab/phaser-client#build)
 - [Develop](https://github.com/JeffersonLab/phaser-client#develop)
@@ -32,6 +33,9 @@ Windows:
 ```
 bin/phaser-client.bat
 ```
+
+## API
+- [javadocs](https://jeffersonlab.github.io/phaser-client/)
 
 ## Configure
 The app expects two configuration files:
