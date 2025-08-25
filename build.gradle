@@ -35,6 +35,7 @@ dependencies {
 }
 application {
     mainClass.set('org.jlab.phaser.PhaserSwingClient')
+    applicationDefaultJvmArgs = ['-Dsun.java2d.opengl=True', '-Dsun.java2d.d3d=true']
 }
 startScripts {
     classpath += files('config')
