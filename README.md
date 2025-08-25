@@ -44,7 +44,7 @@ The app expects two configuration files:
 The client.properties must be in the classpath and the logging.properties must be referenced via Java System Property `java.util.logging.config.file`.  The scripts generated in the install step handle both the classpath and system property and assume the config files are in a directory named `config` at the root of the project.
 
 ## Build
-This project is built with [Java 17](https://adoptium.net/) (compiled to Java 11 bytecode), and uses the [Gradle 7](https://gradle.org/) build tool to automatically download dependencies and build the project from source:
+This project is built with [Java 21](https://adoptium.net/) (compiled to Java 11 bytecode), and uses the [Gradle 9](https://gradle.org/) build tool to automatically download dependencies and build the project from source:
 
 ```
 git clone https://github.com/JeffersonLab/phaser-client.git
