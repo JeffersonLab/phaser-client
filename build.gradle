@@ -52,6 +52,9 @@ startScripts {
 run {
     classpath += files('config')
 }
+tasks.named('distZip', Zip) {
+    preserveFileTimestamps = true
+}
 distributions {
     main {
         contents {
