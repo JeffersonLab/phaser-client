@@ -99,7 +99,7 @@ gradlew javadoc
     - The [Deploy to JLab](https://github.com/JeffersonLab/general-workflows/blob/main/.github/workflows/jlab-deploy-app.yaml) GitHub Action to deploy to the JLab dev environment (PRO link is untouched).
 
 ## Deploy
-At Jefferson Lab this application is deployed to the certified apps area and launched via JMenu using search keyword `phaser`.  Deploying a new version is partially automated on release with the code being staged via [deploy.sh](https://github.com/JeffersonLab/phaser-client/blob/main/doc/deploy.sh).
+At Jefferson Lab this application is deployed to the certified apps area and launched via JMenu using search keyword `phaser`.  Deploying a new version is partially automated on release with the code being staged via [deploy.sh](https://github.com/JeffersonLab/phaser-client/blob/main/cd/deploy.sh).
 
 After testing to ensure the new app version launches and works as expected (and to verify the Help dialog indicates the new version), you can make the new version the live version by updating the symbolic link:
 ```
