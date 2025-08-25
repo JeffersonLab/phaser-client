@@ -1,0 +1,9 @@
+DOWNLOAD_URL=https://github.com/JeffersonLab/phaser-client/releases/download/${TAG}/phaser-client-${VERSION}.zip
+ZIP_FILE=phaser-client-${VERSION}.zip
+APP_HOME=/cs/certified/apps/phaser
+
+
+config() {
+rm -f /cs/certified/apps/phaser/${VERSION}/config/client.properties
+cp /cs/certified/apps/phaser/PRO/config/client.properties /cs/certified/apps/phaser/${VERSION}/config
+}

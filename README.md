@@ -97,23 +97,17 @@ gradlew javadoc
     - The Create release GitHub Action to tag the source and create release notes summarizing any pull requests. Edit the release notes to add any missing details. A distribution zip file artifact is attached to the release.
 
 ## Deploy
-At Jefferson Lab this application is deployed to the certified apps area and launched via JMenu using search keyword `phaser`.  Deploying a new version typically looks like (version 2.0.0 shown):
+At Jefferson Lab this application is deployed to the certified apps area and launched via JMenu using search keyword `phaser`.  Deploying a new version is partially automated on release with the code being staged, but not linked.
+
+After testing to ensure the app launches and works as expected (and verify the Help dialog indicates the new version), you can make the new version the live version by updating the symbolic link:
 ```
-# Install on dev fiefdom and it will be propogated to ops via sync; note: firewall blocks wget on ops fiefdom anyways
 ssh sqam@devl00
-cd /tmp
-wget https://github.com/JeffersonLab/phaser-client/releases/download/v2.0.0/phaser-client-2.0.0.zip
-unzip phaser-client-2.0.0.zip
-mv phaser-client-2.0.0 /cs/certified/apps/phaser/2.0.0
-# Generally want to copy over previous config
-cp /cs/certified/apps/phaser/PRO/config/client.properties /cs/certified/apps/phaser/2.0.0/config
-# Set PRO link
 cd /cs/certified/apps/phaser
 unlink PRO
-ln -s 2.0.0 PRO
+ln -s ${VERSION} PRO
 ```
 
-Generally the [configure](https://github.com/JeffersonLab/phaser-client/tree/main#configure) step must be done as the default configs assume localhost.   Copying the previous version config dir may be sufficient.  It's also a good idea to launch the new version of the app and at least verify the Help dialog indicates the new version.
+Generally the [configure](https://github.com/JeffersonLab/phaser-client/tree/main#configure) step must be done as the default configs assume localhost.  The deploy script just copies the config from the previous version.  
 
 The steps above will only update the `dev` filesystem.   To update others such as `ops` generally the SQAM runs a sync with:
 ```
