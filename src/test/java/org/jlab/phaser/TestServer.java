@@ -2,7 +2,7 @@ package org.jlab.phaser;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
-import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.nio.NioIoHandler;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.DelimiterBasedFrameDecoder;
@@ -26,8 +26,10 @@ public class TestServer {
   public TestServer() throws InterruptedException {
     int port = 2048;
 
-    EventLoopGroup bossGroup = new NioEventLoopGroup();
-    EventLoopGroup workerGroup = new NioEventLoopGroup();
+    MultiThreadIoEventLoopGroup bossGroup =
+        new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory());
+    MultiThreadIoEventLoopGroup workerGroup =
+        new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory());
 
     try {
       ServerBootstrap boot = new ServerBootstrap();
