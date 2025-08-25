@@ -13,3 +13,14 @@ jobs:
     with:
       files: build/distributions/phaser-client*.zip
     secrets: inherit
+
+  docs_publish:
+    permissions:
+      pages: write
+      id-token: write
+      contents: write
+    needs:
+      - release
+    uses: jeffersonlab/java-workflows/.github/workflows/gh-pages-publish.yaml@v2
+    with:
+      semvertag: ${{ needs.release.outputs.semvertag }}
