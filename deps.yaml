@@ -7,7 +7,7 @@ services:
       - "1521:1521"
       - "5500:5500"
     environment:
-      - ORACLE_PASSWORD=testing
-      - TZ=America/New_York
+      ORACLE_PASSWORD: testing
+      TZ: 'America/New_York'
     volumes:
-      - ./docker/oracle/setup:/container-entrypoint-initdb.d
+      - ./container/oracle/initdb.d:/container-entrypoint-initdb.d
