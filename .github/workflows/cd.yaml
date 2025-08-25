@@ -24,3 +24,15 @@ jobs:
     uses: jeffersonlab/java-workflows/.github/workflows/gh-pages-publish.yaml@v2
     with:
       semvertag: ${{ needs.release.outputs.semvertag }}
+
+  dev_deploy:
+    permissions:
+      contents: read
+    needs:
+      - release
+    uses: jeffersonlab/general-workflows/.github/workflows/jlab-deploy-app.yaml@v2
+    with:
+      app: phaser-client
+      env: dev
+      ver: ${{ needs.release.outputs.semver }}
+    secrets: inherit
