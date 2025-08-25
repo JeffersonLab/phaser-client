@@ -5,27 +5,24 @@ plugins {
 }
 
 description = "RF Phaser Client"
-group 'org.jlab'
-version new File("${projectDir}/VERSION").text.trim()
+group = 'org.jlab'
+version = new File("${projectDir}/VERSION").text.trim()
 ext.releaseDate = new Date().format('MMM dd yyyy')
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.release = 11
     options.encoding = 'UTF-8'
     options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
 }
-
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     testLogging {
         events "passed", "skipped", "failed"
-        exceptionFormat "full"
+        exceptionFormat = "full"
     }
 }
-
 repositories {
     mavenCentral()
 }
-
 dependencies {
     implementation 'org.glassfish:javax.json:1.1.4',
                     'io.netty:netty-all:4.0.56.Final',
@@ -36,11 +33,9 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 }
-
 application {
     mainClass.set('org.jlab.phaser.PhaserSwingClient')
 }
-
 startScripts {
     classpath += files('config')
 
@@ -52,11 +47,9 @@ startScripts {
         unixScriptFile.text = unixScriptFile.text.replace('$APP_HOME/lib/config', '$APP_HOME/config')
     }
 }
-
 run {
     classpath += files('config')
 }
-
 distributions {
     main {
         contents {
@@ -66,7 +59,6 @@ distributions {
         }
     }
 }
-
 processResources {
     filesMatching('release.properties') {
         filter {
@@ -77,19 +69,17 @@ processResources {
         }
     }
 }
-
-
 javadoc {
     // Netbeans Matisse generated Swing code missing comments
     options.addStringOption('Xdoclint:none', '-quiet')
     options.overview = "src/main/java/overview.html"
-    options.source = 8
+    options.source = 11
     options.with {
-        links 'https://devdocs.io/openjdk~8/', 'https://netty.io/4.0/api/'
+        links 'https://docs.oracle.com/en/java/javase/11/docs/api/', 'https://netty.io/4.0/api/'
     }
 }
-
-task runClient(type: JavaExec, dependsOn: build) {
+tasks.register('runClient', JavaExec) {
+    dependsOn build
     classpath = files('src/test/resources')
     classpath += sourceSets.main.runtimeClasspath
     classpath += files('config')
@@ -98,8 +88,8 @@ task runClient(type: JavaExec, dependsOn: build) {
             'java.util.logging.config.file': 'config/logging.properties'
     ]
 }
-
-task runServer(type: JavaExec, dependsOn: build) {
+tasks.register('runServer', JavaExec) {
+    dependsOn build
     classpath = files('src/test/resources')
     classpath += sourceSets.test.runtimeClasspath;
     classpath += files('config')
