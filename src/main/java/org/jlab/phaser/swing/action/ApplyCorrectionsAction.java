@@ -11,7 +11,7 @@ import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 import org.jlab.phaser.exception.CommandException;
 import org.jlab.phaser.model.ResultRecord;
-import org.jlab.phaser.swing.dialog.ResultsDialog;
+import org.jlab.phaser.swing.generated.dialog.ResultsDialog;
 import org.jlab.phaser.swing.worker.MinimumExecutionSwingWorker;
 import org.jlab.phaser.swing.worker.ResultsWorker;
 

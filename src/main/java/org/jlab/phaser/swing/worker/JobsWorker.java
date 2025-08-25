@@ -8,7 +8,7 @@ import org.jlab.phaser.exception.PhaserException;
 import org.jlab.phaser.model.JobFilter;
 import org.jlab.phaser.model.JobPage;
 import org.jlab.phaser.model.Paginator;
-import org.jlab.phaser.swing.dialog.ResultsDialog;
+import org.jlab.phaser.swing.generated.dialog.ResultsDialog;
 
 /**
  * Searches for jobs in the Phaser database utilizing a filter and paginator.

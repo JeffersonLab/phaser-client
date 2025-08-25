@@ -1,4 +1,4 @@
-package org.jlab.phaser.swing.dialog.chooser;
+package org.jlab.phaser.swing.chooser;
 
 import java.awt.Component;
 import java.awt.Container;

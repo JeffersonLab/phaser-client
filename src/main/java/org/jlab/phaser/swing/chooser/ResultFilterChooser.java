@@ -1,7 +1,8 @@
-package org.jlab.phaser.swing.dialog.chooser;
+package org.jlab.phaser.swing.chooser;
 
 import java.awt.Dialog;
 import org.jlab.phaser.model.ResultFilter;
+import org.jlab.phaser.swing.generated.dialog.chooser.ResultFilterChooserDialog;
 
 /**
  * A "chooser" widget for choosing a ResultFilter.

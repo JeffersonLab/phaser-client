@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 import org.jlab.phaser.exception.PhaserException;
 import org.jlab.phaser.model.JobSpecification;
 import org.jlab.phaser.swing.worker.MinimumExecutionSwingWorker;
-import org.jlab.phaser.swing.dialog.NewJobDialog;
+import org.jlab.phaser.swing.generated.dialog.NewJobDialog;
 
 /**
  * Handles the "Start" button click on the new job form. Utilizes the server console to send a

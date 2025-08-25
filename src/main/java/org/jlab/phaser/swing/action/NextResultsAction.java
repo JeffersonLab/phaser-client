@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
 import org.jlab.phaser.model.Paginator;
-import org.jlab.phaser.swing.dialog.ResultsDialog;
+import org.jlab.phaser.swing.generated.dialog.ResultsDialog;
 
 /**
  * Handles the "Next" button click on the results form. Launches a new

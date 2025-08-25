@@ -7,8 +7,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.jlab.phaser.exception.PhaserException;
 import org.jlab.phaser.model.CavityWithLastCorrection;
-import org.jlab.phaser.swing.PhaserClientFrame;
-import org.jlab.phaser.swing.dialog.NewJobDialog;
+import org.jlab.phaser.swing.generated.PhaserClientFrame;
+import org.jlab.phaser.swing.generated.dialog.NewJobDialog;
 
 /**
  * Prepares the New Job dialog by performing the initial database query to

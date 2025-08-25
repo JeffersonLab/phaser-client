@@ -1,4 +1,6 @@
-package org.jlab.phaser.swing.dialog.chooser;
+package org.jlab.phaser.swing.generated.dialog.chooser;
+
+import org.jlab.phaser.swing.chooser.ChooserDialog;
 
 import java.awt.Dialog;
 import java.awt.Frame;

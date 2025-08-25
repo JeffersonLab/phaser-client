@@ -1,4 +1,4 @@
-package org.jlab.phaser.swing.dialog;
+package org.jlab.phaser.swing.generated.dialog;
 
 import java.awt.Frame;
 import javax.swing.BoxLayout;

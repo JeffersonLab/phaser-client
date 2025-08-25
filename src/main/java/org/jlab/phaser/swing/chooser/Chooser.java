@@ -1,4 +1,4 @@
-package org.jlab.phaser.swing.dialog.chooser;
+package org.jlab.phaser.swing.chooser;
 
 /**
  * A "chooser" widget template for choosing a generic element of type E.

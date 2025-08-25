@@ -1,4 +1,4 @@
 /**
  * Provides the Phaser Swing Client Swing dialog classes.
  */
-package org.jlab.phaser.swing.dialog;
+package org.jlab.phaser.swing.generated.dialog;

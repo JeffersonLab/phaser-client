@@ -1,4 +1,4 @@
-package org.jlab.phaser.swing.dialog;
+package org.jlab.phaser.swing.generated.dialog;
 
 import java.awt.Component;
 import org.jlab.phaser.model.CavityWithLastCorrection;
@@ -23,7 +23,7 @@ import org.jlab.phaser.PhaserServerConsole;
 import org.jlab.phaser.PhaserSwingClient;
 import org.jlab.phaser.exception.ValidationException;
 import org.jlab.phaser.model.JobSpecification;
-import org.jlab.phaser.swing.PhaserClientFrame;
+import org.jlab.phaser.swing.generated.PhaserClientFrame;
 import org.jlab.phaser.swing.action.StartAction;
 
 /**

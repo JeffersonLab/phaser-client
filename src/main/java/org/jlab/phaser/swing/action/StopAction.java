@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 import org.jlab.phaser.exception.CommandException;
-import org.jlab.phaser.swing.PhaserClientFrame;
+import org.jlab.phaser.swing.generated.PhaserClientFrame;
 import org.jlab.phaser.swing.worker.MinimumExecutionSwingWorker;
 
 /**

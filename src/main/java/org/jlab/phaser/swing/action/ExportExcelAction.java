@@ -17,8 +17,8 @@ import org.jlab.phaser.model.ResultPage;
 import org.jlab.phaser.swing.worker.MinimumExecutionSwingWorker;
 
 import org.jlab.phaser.model.Paginator;
-import org.jlab.phaser.swing.dialog.ResultsDialog;
-import org.jlab.phaser.swing.dialog.chooser.ConfirmOverwriteFileChooser;
+import org.jlab.phaser.swing.generated.dialog.ResultsDialog;
+import org.jlab.phaser.swing.chooser.ConfirmOverwriteFileChooser;
 
 /**
  * Handles the "Excel" button click on the results form. Launches a new worker to export results in

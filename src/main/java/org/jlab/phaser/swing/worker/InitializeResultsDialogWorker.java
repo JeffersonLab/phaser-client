@@ -8,8 +8,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.jlab.phaser.exception.PhaserException;
 import org.jlab.phaser.model.JobPage;
-import org.jlab.phaser.swing.PhaserClientFrame;
-import org.jlab.phaser.swing.dialog.ResultsDialog;
+import org.jlab.phaser.swing.generated.PhaserClientFrame;
+import org.jlab.phaser.swing.generated.dialog.ResultsDialog;
 
 /**
  * Prepares the Results dialog by performing the initial database queries and populating the form

@@ -1,4 +1,4 @@
-package org.jlab.phaser.swing;
+package org.jlab.phaser.swing.generated;
 
 import javax.swing.JFrame;
 

@@ -1,4 +1,4 @@
-package org.jlab.phaser.swing.dialog.chooser;
+package org.jlab.phaser.swing.generated.dialog.chooser;
 
 import java.awt.Dialog;
 import java.text.ParseException;
@@ -8,8 +8,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.text.DefaultFormatterFactory;
 import org.jlab.phaser.model.JobFilter;
-import org.jlab.phaser.swing.PhaserClientFrame;
-import org.jlab.phaser.swing.dialog.ResultsDialog;
+import org.jlab.phaser.swing.chooser.Chooser;
+import org.jlab.phaser.swing.chooser.ChooserDialog;
+import org.jlab.phaser.swing.chooser.TimestampChooser;
+import org.jlab.phaser.swing.generated.PhaserClientFrame;
 import org.jlab.phaser.swing.util.ClearableMaskFormatter;
 
 /**

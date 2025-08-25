@@ -12,8 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jlab.phaser.model.Paginator;
 import org.jlab.phaser.model.ResultRecord;
 import org.jlab.phaser.model.ResultPage;
-import org.jlab.phaser.swing.PhaserClientFrame;
-import org.jlab.phaser.swing.dialog.ResultsDialog;
+import org.jlab.phaser.swing.generated.PhaserClientFrame;
 
 /**
  * Exports Phaser results to Microsoft Excel format.

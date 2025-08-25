@@ -1,4 +1,4 @@
-package org.jlab.phaser.swing.dialog;
+package org.jlab.phaser.swing.generated.dialog;
 
 import java.awt.Component;
 import java.awt.Dimension;
@@ -23,7 +23,7 @@ import org.jlab.phaser.model.ResultRecord;
 import org.jlab.phaser.model.ResultFilter;
 import org.jlab.phaser.model.ResultPage;
 import org.jlab.phaser.model.Paginator;
-import org.jlab.phaser.swing.PhaserClientFrame;
+import org.jlab.phaser.swing.generated.PhaserClientFrame;
 import org.jlab.phaser.swing.action.ApplyCorrectionsAction;
 import org.jlab.phaser.swing.action.ExportElogAction;
 import org.jlab.phaser.swing.action.ExportExcelAction;
@@ -33,9 +33,9 @@ import org.jlab.phaser.swing.action.NextResultsAction;
 import org.jlab.phaser.swing.action.PreviousJobsAction;
 import org.jlab.phaser.swing.action.PreviousResultsAction;
 import org.jlab.phaser.swing.action.ResultsAction;
-import org.jlab.phaser.swing.dialog.chooser.Chooser;
-import org.jlab.phaser.swing.dialog.chooser.JobFilterChooser;
-import org.jlab.phaser.swing.dialog.chooser.ResultFilterChooser;
+import org.jlab.phaser.swing.chooser.Chooser;
+import org.jlab.phaser.swing.chooser.JobFilterChooser;
+import org.jlab.phaser.swing.chooser.ResultFilterChooser;
 import org.jlab.phaser.swing.table.JobTableModel;
 import org.jlab.phaser.swing.util.PopupMenuTableHeaderRenderer;
 

@@ -1,8 +1,10 @@
-package org.jlab.phaser.swing.dialog.chooser;
+package org.jlab.phaser.swing.generated.dialog.chooser;
 
 import java.awt.Dialog;
 import java.awt.Frame;
 import java.util.LinkedHashSet;
+
+import org.jlab.phaser.swing.chooser.ChooserDialog;
 import org.jlab.phaser.swing.table.SortedCavityNameTableModel;
 
 /**

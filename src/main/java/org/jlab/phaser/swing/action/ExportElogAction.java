@@ -9,14 +9,13 @@ import javax.swing.JOptionPane;
 import org.jlab.jlog.exception.LogException;
 import org.jlab.jlog.exception.LogRuntimeException;
 import org.jlab.phaser.PhaserSwingClient;
-import org.jlab.phaser.exception.CommandException;
 import org.jlab.phaser.export.ElogResultsService;
 import org.jlab.phaser.model.ResultFilter;
 import org.jlab.phaser.model.ResultPage;
 import org.jlab.phaser.swing.worker.MinimumExecutionSwingWorker;
 
 import org.jlab.phaser.model.Paginator;
-import org.jlab.phaser.swing.dialog.ResultsDialog;
+import org.jlab.phaser.swing.generated.dialog.ResultsDialog;
 import org.jlab.phaser.swing.util.HyperLinkEnabledMessage;
 
 /**

@@ -1,10 +1,10 @@
-package org.jlab.phaser.swing;
+package org.jlab.phaser.swing.generated;
 
 import java.awt.Color;
-import org.jlab.phaser.swing.dialog.NewJobDialog;
-import org.jlab.phaser.swing.dialog.HelpDialog;
-import org.jlab.phaser.swing.dialog.ResultsDialog;
-import org.jlab.phaser.swing.dialog.WaitDialog;
+import org.jlab.phaser.swing.generated.dialog.NewJobDialog;
+import org.jlab.phaser.swing.generated.dialog.HelpDialog;
+import org.jlab.phaser.swing.generated.dialog.ResultsDialog;
+import org.jlab.phaser.swing.generated.dialog.WaitDialog;
 import org.jlab.phaser.swing.worker.MinimumExecutionSwingWorker;
 import org.jlab.phaser.swing.util.ExitListener;
 import org.jlab.phaser.swing.util.FrostedGlassPane;
