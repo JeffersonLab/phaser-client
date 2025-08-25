@@ -111,7 +111,7 @@ ln -s 2.0.0 PRO
 
 Generally the [configure](https://github.com/JeffersonLab/phaser-client/tree/main#configure) step must be done as the default configs assume localhost.   Copying the previous version config dir may be sufficient.  It's also a good idea to launch the new version of the app and at least verify the Help dialog indicates the new version.
 
-Thie steps above will only update the `dev` filesystem.   To update others such as `ops` generally the SQAM runs a sync with:
+The steps above will only update the `dev` filesystem.   To update others such as `ops` generally the SQAM runs a sync with:
 ```
 /cs/certified/admin/rsync_certified
 ```
