@@ -32,7 +32,7 @@ dependencies {
                     'org.apache.poi:poi-ooxml:5.4.1',
                     'com.oracle.database.jdbc:ojdbc11:23.9.0.25.07'
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 }
 application {
     mainClass.set('org.jlab.phaser.PhaserSwingClient')
