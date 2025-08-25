@@ -7,22 +7,22 @@ import javax.swing.text.PlainDocument;
 
 /**
  * A text document model for holding a job ID.
- * 
+ *
  * @author ryans
  */
 public class JobIdDocument extends PlainDocument {
 
-    private final Pattern pattern = Pattern.compile("\\d{0,9}");
+  private final Pattern pattern = Pattern.compile("\\d{0,9}");
 
-    @Override
-    public void insertString(int offs, String str, AttributeSet a) throws BadLocationException {
-        if (str != null && !str.isEmpty()) {
-            String wouldbe = this.getText(0, this.getLength());
-            StringBuilder builder = new StringBuilder(wouldbe);
-            builder.insert(offs, str);
-            if (pattern.matcher(builder.toString()).matches()) {
-                super.insertString(offs, str, a);
-            }
-        }
+  @Override
+  public void insertString(int offs, String str, AttributeSet a) throws BadLocationException {
+    if (str != null && !str.isEmpty()) {
+      String wouldbe = this.getText(0, this.getLength());
+      StringBuilder builder = new StringBuilder(wouldbe);
+      builder.insert(offs, str);
+      if (pattern.matcher(builder.toString()).matches()) {
+        super.insertString(offs, str, a);
+      }
     }
+  }
 }

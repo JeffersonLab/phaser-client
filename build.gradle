@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'distribution'
+    id 'com.diffplug.spotless' version '7.2.1'
 }
 
 description = "RF Phaser Client"
@@ -101,4 +102,10 @@ tasks.register('runServer', JavaExec) {
     systemProperties = [
             'java.util.logging.config.file': 'config/logging.properties'
     ]
+}
+spotless {
+    java {
+        targetExclude("**/generated/**/*.java")
+        googleJavaFormat()
+    }
 }

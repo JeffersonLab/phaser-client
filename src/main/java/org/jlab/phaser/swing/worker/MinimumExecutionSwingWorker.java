@@ -6,76 +6,76 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.SwingWorker;
 
 /**
- * This is a SwingWorker which guarantees that it will take at least a minimum
- * amount of time to do its job.
- * 
- * This is useful for ensuring that a "Please
- * Wait" dialog doesn't flicker because it is shown too little time.
+ * This is a SwingWorker which guarantees that it will take at least a minimum amount of time to do
+ * its job.
+ *
+ * <p>This is useful for ensuring that a "Please Wait" dialog doesn't flicker because it is shown
+ * too little time.
  *
  * @author ryans
- * @param <T> the result type returned by this SwingWorker's doInBackground and
- * get methods
- * @param <V> the type used for carrying out intermediate results by this
- * SwingWorker's publish and process methods
+ * @param <T> the result type returned by this SwingWorker's doInBackground and get methods
+ * @param <V> the type used for carrying out intermediate results by this SwingWorker's publish and
+ *     process methods
  */
 public abstract class MinimumExecutionSwingWorker<T, V> extends SwingWorker<T, V> {
 
-    /**
-     * Default minimum milliseconds.
-     */
-    public static final long DEFAULT_MIN_MILLISECONDS = 750L;
-    private final long minimumMilliseconds;
-    private final Object waitLock = new Object();
-    private boolean minimumElapsed = false;
+  /** Default minimum milliseconds. */
+  public static final long DEFAULT_MIN_MILLISECONDS = 750L;
 
-    /**
-     * Creates a new MinimumExecutionSwingWorker with a default minimum
-     * execution time of 750 milliseconds (seems to work okay with Exceed).
-     */
-    public MinimumExecutionSwingWorker() {
-        this(DEFAULT_MIN_MILLISECONDS);
-    }
+  private final long minimumMilliseconds;
+  private final Object waitLock = new Object();
+  private boolean minimumElapsed = false;
 
-    /**
-     * Creates a new MinimumExecutionSwingWorker with the specified minimum execution time.
-     * 
-     * @param minimumMilliseconds The minimum execution time in milliseconds
-     */
-    public MinimumExecutionSwingWorker(long minimumMilliseconds) {
-        this.minimumMilliseconds = minimumMilliseconds;
-    }
+  /**
+   * Creates a new MinimumExecutionSwingWorker with a default minimum execution time of 750
+   * milliseconds (seems to work okay with Exceed).
+   */
+  public MinimumExecutionSwingWorker() {
+    this(DEFAULT_MIN_MILLISECONDS);
+  }
 
-    @Override
-    protected T doInBackground() throws Exception {
-        T result = null;
-        ScheduledExecutorService service
-                = Executors.newSingleThreadScheduledExecutor();
+  /**
+   * Creates a new MinimumExecutionSwingWorker with the specified minimum execution time.
+   *
+   * @param minimumMilliseconds The minimum execution time in milliseconds
+   */
+  public MinimumExecutionSwingWorker(long minimumMilliseconds) {
+    this.minimumMilliseconds = minimumMilliseconds;
+  }
 
-        try {
-            service.schedule(new Runnable() {
+  @Override
+  protected T doInBackground() throws Exception {
+    T result = null;
+    ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
 
-                @Override
-                public void run() {
-                    synchronized (waitLock) {
-                        minimumElapsed = true;
-                        waitLock.notify();
-                    }
-                }
-            }, minimumMilliseconds, TimeUnit.MILLISECONDS);
+    try {
+      service.schedule(
+          new Runnable() {
 
-            result = doWithMinimumExecution();
-
-            synchronized (waitLock) {
-                while (!minimumElapsed) {
-                    waitLock.wait();
-                }
+            @Override
+            public void run() {
+              synchronized (waitLock) {
+                minimumElapsed = true;
+                waitLock.notify();
+              }
             }
-        } finally {
-            service.shutdown();
-        }
+          },
+          minimumMilliseconds,
+          TimeUnit.MILLISECONDS);
 
-        return result;
+      result = doWithMinimumExecution();
+
+      synchronized (waitLock) {
+        while (!minimumElapsed) {
+          waitLock.wait();
+        }
+      }
+    } finally {
+      service.shutdown();
     }
 
-    protected abstract T doWithMinimumExecution() throws Exception;
+    return result;
+  }
+
+  protected abstract T doWithMinimumExecution() throws Exception;
 }

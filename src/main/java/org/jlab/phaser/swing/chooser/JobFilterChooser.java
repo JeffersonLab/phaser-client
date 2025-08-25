@@ -7,19 +7,18 @@ import org.jlab.phaser.swing.generated.dialog.chooser.JobFilterChooserDialog;
 /**
  * A "chooser" widget for choosing a JobFilter.
  *
- * A "chooser" is a concept borrowed from Swing classes like JColorChooser and
- * JFileChooser.
- * 
+ * <p>A "chooser" is a concept borrowed from Swing classes like JColorChooser and JFileChooser.
+ *
  * @author ryans
  */
 public class JobFilterChooser extends Chooser<JobFilter> {
-    
-    /**
-     * Create a new JobFilterChooser.
-     * 
-     * @param parent The parent Dialog
-     */
-    public JobFilterChooser(Dialog parent) {
-        super(new JobFilterChooserDialog(parent));
-    }       
+
+  /**
+   * Create a new JobFilterChooser.
+   *
+   * @param parent The parent Dialog
+   */
+  public JobFilterChooser(Dialog parent) {
+    super(new JobFilterChooserDialog(parent));
+  }
 }

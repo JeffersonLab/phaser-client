@@ -18,23 +18,22 @@ import javax.json.JsonReader;
  */
 public class JsonDecoder extends ChannelInboundHandlerAdapter {
 
-    private static final Logger LOGGER = Logger.getLogger(
-            JsonDecoder.class.getName());
+  private static final Logger LOGGER = Logger.getLogger(JsonDecoder.class.getName());
 
-    @Override
-    public void channelRead(ChannelHandlerContext context, Object message) {
-        LOGGER.log(Level.FINEST, "JsonDecoder Message: {0}", message);
-        if (message instanceof String) {
-            StringReader stringReader = new StringReader((String) message);
-            try (JsonReader jsonReader = Json.createReader(stringReader)) {
-                JsonObject json = jsonReader.readObject();
-                context.fireChannelRead(json);
-            } catch (JsonException | IllegalStateException e) {
-                context.fireExceptionCaught(e);
-            }
-        } else {
-            context.fireExceptionCaught(new DecoderException("JsonDecoder expects a String, found: "
-                    + message));
-        }
+  @Override
+  public void channelRead(ChannelHandlerContext context, Object message) {
+    LOGGER.log(Level.FINEST, "JsonDecoder Message: {0}", message);
+    if (message instanceof String) {
+      StringReader stringReader = new StringReader((String) message);
+      try (JsonReader jsonReader = Json.createReader(stringReader)) {
+        JsonObject json = jsonReader.readObject();
+        context.fireChannelRead(json);
+      } catch (JsonException | IllegalStateException e) {
+        context.fireExceptionCaught(e);
+      }
+    } else {
+      context.fireExceptionCaught(
+          new DecoderException("JsonDecoder expects a String, found: " + message));
     }
+  }
 }

@@ -14,30 +14,28 @@ import javax.swing.JPanel;
  */
 public class FrostedGlassPane extends JPanel {
 
-    /**
-     * Create a new FrostedGlassPane.
-     */
-    public FrostedGlassPane() {
-        setOpaque(false);
-    }
+  /** Create a new FrostedGlassPane. */
+  public FrostedGlassPane() {
+    setOpaque(false);
+  }
 
-    @Override
-    public final void setOpaque(boolean opaque) { 
-        super.setOpaque(opaque); // We make this method final since we call from constructor
-    }
+  @Override
+  public final void setOpaque(boolean opaque) {
+    super.setOpaque(opaque); // We make this method final since we call from constructor
+  }
 
-    @Override
-    public void paint(Graphics g) {
-        int w = getWidth();
-        int h = getHeight();
+  @Override
+  public void paint(Graphics g) {
+    int w = getWidth();
+    int h = getHeight();
 
-        super.paint(g);
+    super.paint(g);
 
-        Graphics2D g2 = (Graphics2D) g.create();
+    Graphics2D g2 = (Graphics2D) g.create();
 
-        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, .5f));
-        g2.fillRect(0, 0, w, h);
+    g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, .5f));
+    g2.fillRect(0, 0, w, h);
 
-        g2.dispose();
-    }
+    g2.dispose();
+  }
 }
