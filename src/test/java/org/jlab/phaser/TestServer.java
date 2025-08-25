@@ -11,10 +11,16 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
 import io.netty.util.ReferenceCountUtil;
+import io.netty.util.internal.logging.InternalLoggerFactory;
+import io.netty.util.internal.logging.JdkLoggerFactory;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringReader;
+import java.util.logging.LogManager;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
+import org.jlab.phaser.exception.InitializationException;
 
 /**
  * @author ryans
@@ -133,7 +139,25 @@ public class TestServer {
     }
   }
 
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args)
+      throws InterruptedException, IOException, InitializationException {
+    try (InputStream loggingStream =
+        PhaserSwingClient.class.getClassLoader().getResourceAsStream("logging.properties")) {
+
+      if (loggingStream == null) {
+        throw new InitializationException("File Not Found; Configuration File: logging.properties");
+      }
+
+      // java.util.logging configuration defaults to $JAVA_HOME/lib/logging.properties and is
+      // overridden by the
+      // system property -Djava.util.logging.config.file, but this does NOT search the classpath.
+      // So we leverage
+      // the classpath search ourselves and manually configure here
+      LogManager.getLogManager().readConfiguration(loggingStream);
+    }
+
+    InternalLoggerFactory.setDefaultFactory(JdkLoggerFactory.INSTANCE);
+
     new TestServer();
   }
 }

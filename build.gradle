@@ -88,7 +88,6 @@ tasks.register('runClient', JavaExec) {
     classpath += files('config')
     mainClass.set('org.jlab.phaser.PhaserSwingClient')
     systemProperties = [
-            'java.util.logging.config.file': 'config/logging.properties',
             "sun.java2d.opengl": "True",
             "sun.java2d.d3d": "true"
 
@@ -100,9 +99,6 @@ tasks.register('runServer', JavaExec) {
     classpath += sourceSets.test.runtimeClasspath;
     classpath += files('config')
     mainClass.set('org.jlab.phaser.TestServer')
-    systemProperties = [
-            'java.util.logging.config.file': 'config/logging.properties'
-    ]
 }
 spotless {
     java {

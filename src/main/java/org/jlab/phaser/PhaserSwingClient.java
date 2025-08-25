@@ -10,12 +10,15 @@ import io.netty.handler.codec.Delimiters;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
+import io.netty.util.internal.logging.InternalLoggerFactory;
+import io.netty.util.internal.logging.JdkLoggerFactory;
 import java.awt.EventQueue;
 import java.awt.Frame;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import org.jlab.phaser.db.OracleJdbcConsole;
 import org.jlab.phaser.exception.CommandException;
@@ -178,7 +181,9 @@ public final class PhaserSwingClient {
     try (InputStream propStream =
             PhaserSwingClient.class.getClassLoader().getResourceAsStream("client.properties");
         InputStream releaseStream =
-            PhaserSwingClient.class.getClassLoader().getResourceAsStream("release.properties")) {
+            PhaserSwingClient.class.getClassLoader().getResourceAsStream("release.properties");
+        InputStream loggingStream =
+            PhaserSwingClient.class.getClassLoader().getResourceAsStream("logging.properties")) {
       if (propStream == null) {
         throw new InitializationException("Did not find client.properties");
       }
@@ -187,9 +192,23 @@ public final class PhaserSwingClient {
         throw new InitializationException("File Not Found; Configuration File: release.properties");
       }
 
+      if (loggingStream == null) {
+        throw new InitializationException("File Not Found; Configuration File: logging.properties");
+      }
+
       CLIENT_PROPERTIES.load(propStream);
 
       RELEASE_PROPERTIES.load(releaseStream);
+
+      // java.util.logging configuration defaults to $JAVA_HOME/lib/logging.properties and is
+      // overridden by the
+      // system property -Djava.util.logging.config.file, but this does NOT search the classpath.
+      // So we leverage
+      // the classpath search ourselves and manually configure here
+      LogManager.getLogManager().readConfiguration(loggingStream);
+
+      // Configure Netty to use JUL
+      InternalLoggerFactory.setDefaultFactory(JdkLoggerFactory.INSTANCE);
 
       String host = CLIENT_PROPERTIES.getProperty("server.host");
       int port = Integer.parseInt(CLIENT_PROPERTIES.getProperty("server.port"));
