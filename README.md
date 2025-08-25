@@ -95,11 +95,13 @@ gradlew javadoc
 1. Bump the version number in the VERSION file and commit and push to GitHub (using [Semantic Versioning](https://semver.org/)).
 1. The CD GitHub Action should run automatically invoking:
     - The Create release GitHub Action to tag the source and create release notes summarizing any pull requests. Edit the release notes to add any missing details. A distribution zip file artifact is attached to the release.
+    - The [Publish docs](https://github.com/JeffersonLab/java-workflows/blob/main/.github/workflows/gh-pages-publish.yaml) GitHub Action to create and publish javadocs. 
+    - The [Deploy to JLab](https://github.com/JeffersonLab/general-workflows/blob/main/.github/workflows/jlab-deploy-app.yaml) GitHub Action to deploy to the JLab dev environment (PRO link is untouched).
 
 ## Deploy
-At Jefferson Lab this application is deployed to the certified apps area and launched via JMenu using search keyword `phaser`.  Deploying a new version is partially automated on release with the code being staged, but not linked.
+At Jefferson Lab this application is deployed to the certified apps area and launched via JMenu using search keyword `phaser`.  Deploying a new version is partially automated on release with the code being staged via [deploy.sh](https://github.com/JeffersonLab/phaser-client/blob/main/doc/deploy.sh).
 
-After testing to ensure the app launches and works as expected (and verify the Help dialog indicates the new version), you can make the new version the live version by updating the symbolic link:
+After testing to ensure the new app version launches and works as expected (and to verify the Help dialog indicates the new version), you can make the new version the live version by updating the symbolic link:
 ```
 ssh sqam@devl00
 cd /cs/certified/apps/phaser
