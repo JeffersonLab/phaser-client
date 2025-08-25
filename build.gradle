@@ -86,7 +86,10 @@ tasks.register('runClient', JavaExec) {
     classpath += files('config')
     mainClass.set('org.jlab.phaser.PhaserSwingClient')
     systemProperties = [
-            'java.util.logging.config.file': 'config/logging.properties'
+            'java.util.logging.config.file': 'config/logging.properties',
+            "sun.java2d.opengl": "True",
+            "sun.java2d.d3d": "true"
+
     ]
 }
 tasks.register('runServer', JavaExec) {
