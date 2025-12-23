@@ -36,7 +36,8 @@ dependencies {
 }
 application {
     mainClass.set('org.jlab.phaser.PhaserSwingClient')
-    applicationDefaultJvmArgs = ['-Dsun.java2d.opengl=True', '-Dsun.java2d.d3d=true']
+    applicationDefaultJvmArgs = ['-Dsun.java2d.uiScale=1.0']
+    // '-Dsun.java2d.opengl=True', '-Dsun.java2d.d3d=true'
 }
 startScripts {
     classpath += files('config')
@@ -91,10 +92,11 @@ tasks.register('runClient', JavaExec) {
     classpath += files('config')
     mainClass.set('org.jlab.phaser.PhaserSwingClient')
     systemProperties = [
-            "sun.java2d.opengl": "True",
-            "sun.java2d.d3d": "true"
-
+            "sun.java2d.uiScale=1.0": 1.0
     ]
+
+    //"sun.java2d.opengl": "True",
+    //"sun.java2d.d3d": "true"
 }
 tasks.register('runServer', JavaExec) {
     dependsOn build
