@@ -623,7 +623,7 @@ public final class PhaserClientFrame extends JFrame implements NotificationListe
         jScrollPane3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         statusMessage.setEditable(false);
-        statusMessage.setBorder(null);
+        statusMessage.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3));
         statusMessage.setMinimumSize(new java.awt.Dimension(50, 150));
         statusMessage.setName(""); // NOI18N
         statusMessage.setOpaque(false);
