@@ -539,7 +539,7 @@ public final class PhaserClientFrame extends JFrame implements NotificationListe
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Phaser");
         setMinimumSize(new java.awt.Dimension(700, 700));
-        setPreferredSize(new java.awt.Dimension(705, 700));
+        setPreferredSize(new java.awt.Dimension(700, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
