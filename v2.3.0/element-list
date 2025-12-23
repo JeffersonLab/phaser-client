@@ -1,0 +1,16 @@
+org.jlab.phaser
+org.jlab.phaser.db
+org.jlab.phaser.exception
+org.jlab.phaser.export
+org.jlab.phaser.model
+org.jlab.phaser.network
+org.jlab.phaser.swing
+org.jlab.phaser.swing.action
+org.jlab.phaser.swing.chooser
+org.jlab.phaser.swing.document
+org.jlab.phaser.swing.generated
+org.jlab.phaser.swing.generated.dialog
+org.jlab.phaser.swing.generated.dialog.chooser
+org.jlab.phaser.swing.table
+org.jlab.phaser.swing.util
+org.jlab.phaser.swing.worker
