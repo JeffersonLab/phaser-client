@@ -1,5 +1,5 @@
 # phaser-client [![CI](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yaml/badge.svg)](https://github.com/JeffersonLab/phaser-client/actions/workflows/ci.yaml)
-A graphical user interface client for operators to interact with the RF Phaser server at JLab.
+A graphical user interface client for operators to interact with the [RF Phaser server](https://code.jlab.org/acc/ops/acs/certified/phaser-server) at JLab.
 
 ![Screenshot](https://raw.githubusercontent.com/JeffersonLab/phaser-client/main/Screenshot.png)
 
