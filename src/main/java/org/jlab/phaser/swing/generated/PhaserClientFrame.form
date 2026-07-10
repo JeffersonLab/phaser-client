@@ -7,9 +7,6 @@
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[700, 700]"/>
     </Property>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[700, 700]"/>
-    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -417,25 +414,34 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="continuousLabel" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel15" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="algorithmLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="algorithmValue" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="correctLabel" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="maxPhaseErrorValue" min="-2" max="-2" attributes="0"/>
-                          <Component id="continuousValue" min="-2" max="-2" attributes="0"/>
-                          <Component id="correctValue" min="-2" max="-2" attributes="0"/>
-                          <Component id="jobStartValue" min="-2" max="-2" attributes="0"/>
-                          <Component id="jobNumberValue" min="-2" max="-2" attributes="0"/>
-                          <Component id="maxMomentumErrorValue" min="-2" max="-2" attributes="0"/>
-                          <Component id="kickSamplesValue" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="continuousLabel" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel15" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="correctLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="maxPhaseErrorValue" min="-2" max="-2" attributes="0"/>
+                                  <Component id="continuousValue" min="-2" max="-2" attributes="0"/>
+                                  <Component id="correctValue" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jobStartValue" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jobNumberValue" min="-2" max="-2" attributes="0"/>
+                                  <Component id="maxMomentumErrorValue" min="-2" max="-2" attributes="0"/>
+                                  <Component id="kickSamplesValue" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                   </Group>
@@ -453,7 +459,12 @@
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jobStartValue" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="algorithmLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="algorithmValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="maxPhaseErrorValue" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -478,7 +489,7 @@
                           <Component id="correctLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="correctValue" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -550,6 +561,16 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="kickSamplesValue">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="N/A"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="algorithmLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Algorithm:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="algorithmValue">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N/A"/>
               </Properties>
