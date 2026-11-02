@@ -535,11 +535,12 @@ public final class PhaserClientFrame extends JFrame implements NotificationListe
         maxMomentumErrorValue = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         kickSamplesValue = new javax.swing.JLabel();
+        algorithmLabel = new javax.swing.JLabel();
+        algorithmValue = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Phaser");
         setMinimumSize(new java.awt.Dimension(700, 700));
-        setPreferredSize(new java.awt.Dimension(700, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
@@ -752,6 +753,10 @@ public final class PhaserClientFrame extends JFrame implements NotificationListe
 
         kickSamplesValue.setText("N/A");
 
+        algorithmLabel.setText("Algorithm:");
+
+        algorithmValue.setText("N/A");
+
         javax.swing.GroupLayout settingsPanelLayout = new javax.swing.GroupLayout(settingsPanel);
         settingsPanel.setLayout(settingsPanelLayout);
         settingsPanelLayout.setHorizontalGroup(
@@ -759,23 +764,29 @@ public final class PhaserClientFrame extends JFrame implements NotificationListe
             .addGroup(settingsPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(continuousLabel)
-                    .addGroup(settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(correctLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(maxPhaseErrorValue)
-                    .addComponent(continuousValue)
-                    .addComponent(correctValue)
-                    .addComponent(jobStartValue)
-                    .addComponent(jobNumberValue)
-                    .addComponent(maxMomentumErrorValue)
-                    .addComponent(kickSamplesValue))
+                    .addGroup(settingsPanelLayout.createSequentialGroup()
+                        .addComponent(algorithmLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(algorithmValue))
+                    .addGroup(settingsPanelLayout.createSequentialGroup()
+                        .addGroup(settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(continuousLabel)
+                            .addGroup(settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(correctLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(maxPhaseErrorValue)
+                            .addComponent(continuousValue)
+                            .addComponent(correctValue)
+                            .addComponent(jobStartValue)
+                            .addComponent(jobNumberValue)
+                            .addComponent(maxMomentumErrorValue)
+                            .addComponent(kickSamplesValue))))
                 .addGap(76, 76, 76))
         );
         settingsPanelLayout.setVerticalGroup(
@@ -788,6 +799,10 @@ public final class PhaserClientFrame extends JFrame implements NotificationListe
                 .addGroup(settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jobStartValue))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(algorithmLabel)
+                    .addComponent(algorithmValue))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
@@ -808,7 +823,7 @@ public final class PhaserClientFrame extends JFrame implements NotificationListe
                 .addGroup(settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(correctLabel)
                     .addComponent(correctValue))
-                .addGap(31, 31, 31))
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout configPanelLayout = new javax.swing.GroupLayout(configPanel);
@@ -884,6 +899,8 @@ public final class PhaserClientFrame extends JFrame implements NotificationListe
     }//GEN-LAST:event_helpButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel algorithmLabel;
+    private javax.swing.JLabel algorithmValue;
     private javax.swing.JTable cavitiesTable;
     private javax.swing.JProgressBar cavityProgressBar;
     private javax.swing.JLabel cavityStartValue;

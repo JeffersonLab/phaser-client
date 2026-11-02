@@ -234,12 +234,13 @@ public final class NewJobDialog extends JDialog {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         kickSamplesInput = new javax.swing.JTextField();
+        algorithmLabel = new javax.swing.JLabel();
+        algorithmInput = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("New Phasing Job");
         setMinimumSize(new java.awt.Dimension(800, 600));
         setModal(true);
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
         cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -436,6 +437,10 @@ public final class NewJobDialog extends JDialog {
 
         kickSamplesInput.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
+        algorithmLabel.setText("Algorithm:");
+
+        algorithmInput.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BEM Phase (cjs)", "elock Phase (Krest)" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -447,12 +452,14 @@ public final class NewJobDialog extends JDialog {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel5))
+                            .addComponent(jLabel5)
+                            .addComponent(algorithmLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(maxPhaseErrorInput, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                            .addComponent(maxPhaseErrorInput, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                             .addComponent(maxMomentumErrorInput)
-                            .addComponent(kickSamplesInput))
+                            .addComponent(kickSamplesInput)
+                            .addComponent(algorithmInput, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -463,8 +470,12 @@ public final class NewJobDialog extends JDialog {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(9, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(algorithmLabel)
+                    .addComponent(algorithmInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(maxPhaseErrorInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -482,7 +493,7 @@ public final class NewJobDialog extends JDialog {
                 .addComponent(continuousCheckbox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(correctCheckbox)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -666,6 +677,8 @@ public final class NewJobDialog extends JDialog {
     }//GEN-LAST:event_batchSelectButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> algorithmInput;
+    private javax.swing.JLabel algorithmLabel;
     private javax.swing.JButton allLeftButton;
     private javax.swing.JButton allRightButton;
     private javax.swing.JTable availableTable;
